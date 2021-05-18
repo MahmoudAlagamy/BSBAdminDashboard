@@ -1,0 +1,27 @@
+﻿@model BSBAdminDashboard.Models.DepartmentVM
+@{
+    ViewBag.title = "Delete";
+}
+
+<a asp-controller="Department" asp-action="Index"><input type="button" class="btn btn-primary" value="Back To List" /></a>
+
+<h2>Delete Department</h2>
+
+<form asp-controller="Department" asp-action="Delete" method="post" class="form-group">
+    <label asp-for="DepartmentName">Department Name</label>
+    <input type="text" asp-for="DepartmentName" readonly="readonly" class="form-control" />
+
+    <br />
+
+    <label asp-for="DepartmentCode">Department Code</label>
+    <input type="text" asp-for="DepartmentCode" disabled class="form-control" />
+
+    <br />
+
+    <center>
+        <h2 class="text-danger">Are You Sure About That Delete ? </h2>
+        <input type="submit" class="btn btn-danger" value="Delete" />
+    </center>
+</form>
+
+

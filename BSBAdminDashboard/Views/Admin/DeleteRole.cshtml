@@ -1,0 +1,54 @@
+﻿@model BSBAdminDashboard.Models.DeleteRoleVM
+@{
+    ViewBag.Title = "DeleteRole";
+}
+
+<h2>Delete Role</h2>
+
+<a asp-action="Index" asp-controller="Admin" class="btn btn-primary">Back To List</a>
+<hr />
+
+<body class="signup-page">
+    <div class="signup-box">
+        <div class="card">
+            <div class="body">
+                <form asp-controller="Admin" asp-action="DeleteRole" method="POST">
+                    <div class="msg">Delete Role</div>
+
+                    <!-- Role Id -->
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="material-icons">lock</i>
+                        </span>
+                        <div class="form-line">
+                            <input asp-for="Id" type="text" class="form-control" readonly>
+                        </div>
+                    </div>
+
+                    <!-- Role Name -->
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="material-icons">lock</i>
+                        </span>
+                        <div class="form-line">
+                            <input readonly asp-for="RoleName" type="text" class="form-control">
+                        </div>
+                    </div>
+
+                    <!-- button -->
+                    <h1 class="text-danger text-center"> Are You Sure About Your Delete...</h1>
+                    <button class="btn btn-block btn-lg bg-pink waves-effect" type="submit">Delete</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+
+
+
+
+
+

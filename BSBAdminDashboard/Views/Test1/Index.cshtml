@@ -1,0 +1,63 @@
+﻿@{
+    Layout = null;
+}
+
+<!-- Inject In View -->
+@inject BSBAdminDashboard.BL.Interface.IDepartmentRep department
+@inject BSBAdminDashboard.BL.Interface.IEmployeeRep employee
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+
+
+
+    <!-- Inject In View -->
+    @*<ul>
+            @foreach (var item in department.Get())
+            {
+                <li>@item.DepartmentName</li>
+            }
+        </ul>
+
+        <ul>
+            @foreach (var item in employee.Get())
+            {
+                <li>@item.Name</li>
+            }
+        </ul>*@
+
+    Enter Name <input type="text" id="txt1" />
+    <input type="button" id="btn" value="Click Me" />
+    <div id="MyDiv"></div>
+
+    <!-- Ajax With .Net Core -->
+    <script src="~/plugins/jquery/jquery.js"></script>
+    <script>
+        // calling with ajax
+        $(function () {
+            $("#btn").click(function () {
+
+                var Name = $("#txt1").val();
+
+                $.ajax({
+
+                    type: "POST",
+                    url: "/Test1/Display",
+                    data: { name: Name },
+                    success: function (res) {
+                        $("#MyDiv").text(res);
+                    }
+
+                })
+            });
+        });
+    </script>
+</body>
+</html>

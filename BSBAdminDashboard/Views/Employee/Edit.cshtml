@@ -1,0 +1,76 @@
+﻿<!-- For Tag helper -->
+@model BSBAdminDashboard.Models.EmployeeVM
+@{
+    ViewBag.Title = "Edit Employee";
+}
+
+<a asp-controller="Employee" asp-action="Index"><input type="button" class="btn btn-primary" value="Back To List" /></a>
+
+<h2>Edit Employee</h2>
+
+<form asp-controller="Employee" asp-action="Edit" method="post" class="form-group">
+    <label asp-for="Name">Employee Name</label>
+    <input type="text" asp-for="Name" class="form-control" />
+    <span class="text-danger" asp-validation-for="Name"></span>
+
+    <br />
+
+    <label asp-for="Salary">Employee Salary</label>
+    <input type="text" asp-for="Salary" class="form-control" />
+    <span class="text-danger" asp-validation-for="Salary"></span>
+
+    <br />
+
+    <label asp-for="Address">Employee Address</label>
+    <input type="text" asp-for="Address" class="form-control" />
+    <span class="text-danger" asp-validation-for="Address"></span>
+
+    <br />
+
+    <label asp-for="Email">Employee Email</label>
+    <input type="text" asp-for="Email" class="form-control" />
+    <span class="text-danger" asp-validation-for="Email"></span>
+
+    <br />
+
+    <label asp-for="HierDate">Hier date</label>
+    <input type="date" asp-for="HierDate" class="form-control" />
+    <span class="text-danger" asp-validation-for="HierDate"></span>
+
+    <br />
+
+    <label asp-for="Notes">Notes</label>
+    <textarea asp-for="Notes" class="form-control" rows="4"></textarea>
+    <span class="text-danger" asp-validation-for="Notes"></span>
+
+    <br />
+
+    <label asp-for="DepartmentId">Department Name</label>
+    <select asp-for="DepartmentId" asp-items="@(SelectList)ViewBag.DepartmentList">
+        <option>Choose Department</option>
+    </select>
+    <span class="text-danger" asp-validation-for="DepartmentId"></span>
+
+    <br /><br />
+    <!-- From https://bootswatch.com/lumen/ -->
+    <div class="custom-control custom-checkbox">
+        <input type="checkbox" asp-for="IsActive" class="custom-control-input">
+        <label class="custom-control-label" asp-for="IsActive">Is Active</label>
+    </div>
+
+    <br />
+
+    <center>
+        <input type="submit" class="btn btn-success" value="Save" />
+    </center>
+</form>
+
+<script src="~/jquery/jquery.min.js"></script>
+<script src="~/jquery-validate/jquery.validate.min.js"></script>
+<script src="~/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+
+
+
+
+

@@ -1,0 +1,39 @@
+﻿@model BSBAdminDashboard.Models.CreateRoleVM
+@{
+    ViewBag.Title = "CreateRole";
+}
+
+<h2>Create Role</h2>
+
+<a asp-action="Index" asp-controller="Admin" class="btn btn-primary">Back To List</a>
+<hr />
+
+<body class="signup-page">
+    <div class="signup-box">
+        <div class="card">
+            <div class="body">
+                <form asp-controller="Admin" asp-action="CreateRole" method="POST">
+                    <div class="msg">Create Role</div>
+
+                    <div class="text-danger" asp-validation-summary="All"></div>
+
+                    <!-- Role Name -->
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="material-icons">lock</i>
+                        </span>
+                        <div class="form-line">
+                            <input asp-for="RoleName" type="text" class="form-control" placeholder="Enter Role">
+                        </div>
+                        <div><span class="text-danger" asp-validation-for="RoleName"></span></div>
+                    </div>
+
+                    <!-- button -->
+                    <button class="btn btn-block btn-lg bg-pink waves-effect" type="submit">Create</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>

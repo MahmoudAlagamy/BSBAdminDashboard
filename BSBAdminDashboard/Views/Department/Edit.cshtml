@@ -1,0 +1,31 @@
+﻿@model BSBAdminDashboard.Models.DepartmentVM
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<a asp-controller="Department" asp-action="Index"><input type="button" class="btn btn-primary" value="Back To List" /></a>
+
+<h2>Edit department</h2>
+
+<form asp-controller="Department" asp-action="Edit" method="post" class="form-group">
+    <label asp-for="DepartmentName">Department Name</label>
+    <input type="text" asp-for="DepartmentName" class="form-control" />
+
+    <br />
+
+    <label asp-for="DepartmentCode">Department Code</label>
+    <input type="text" asp-for="DepartmentCode" class="form-control" />
+
+    <br />
+
+    <center>
+        <input type="submit" class="btn btn-primary" value="Edit" />
+    </center>
+</form>
+
+<script src="~/jquery/jquery.min.js"></script>
+<script src="~/jquery-validate/jquery.validate.min.js"></script>
+<script src="~/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+

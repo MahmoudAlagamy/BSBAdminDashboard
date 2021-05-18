@@ -1,0 +1,82 @@
+﻿
+@model BSBAdminDashboard.Models.EmployeeVM
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Layout/MainLayout.cshtml";
+}
+
+@*<img src="~/Files/Photos/@item.PhotoName" width="30" height="30" />*@
+
+<h2>Employee Details</h2>
+
+<form asp-controller="Employee" asp-action="Details" method="post" class="form-group">
+    <label asp-for="Name">Employee Name</label>
+    <input disabled type="text" asp-for="Name" class="form-control" />
+
+    <br />
+
+    @*<img src="~/Files/Photos/@ViewBag.PhotoN" width="200" height="200" />*@
+    
+    <!-- OR -->
+
+    <img src="~/Files/Photos/@Model.PhotoName" width="200" height="200" />
+
+    <h3><a href="~/Files/Docs/@ViewBag.CvN">Download CV</a></h3>
+    
+    <br />
+
+    <label asp-for="Salary">Employee Salary</label>
+    <input disabled type="text" asp-for="Salary" class="form-control" />
+
+    <br />
+
+    <label asp-for="Address">Employee Address</label>
+    <input disabled type="text" asp-for="Address" class="form-control" />
+
+    <br />
+
+    <label asp-for="Email">Employee Email</label>
+    <input disabled type="text" asp-for="Email" class="form-control" />
+
+    <br />
+
+    <label asp-for="HierDate">Hier date</label>
+    <input disabled type="text" asp-for="HierDate" class="form-control" />
+
+    <br />
+
+    <label asp-for="DistrictName">District Name</label>
+    <input disabled type="text" asp-for="DistrictName" class="form-control" />
+
+    <br />
+
+    <label asp-for="Notes">Notes</label>
+    <textarea disabled asp-for="Notes" class="form-control" rows="4"></textarea>
+
+    <br />
+
+    <label asp-for="DepartmentId">Department Name</label>
+    <select disabled asp-for="DepartmentId" asp-items="@(SelectList)ViewBag.DeptName">
+        <option>Choose Department</option>
+
+    </select>
+
+    <br /><br />
+    <!-- From https://bootswatch.com/lumen/ -->
+    <div class="custom-control custom-checkbox">
+        <input disabled type="checkbox" asp-for="IsActive" class="custom-control-input">
+        <label class="custom-control-label" asp-for="IsActive">Is Active</label>
+    </div>
+
+    <br />
+
+
+    <center>
+        <a asp-controller="Employee" asp-action="Index"><input type="button" class="btn btn-primary" value="Back To List" /></a>
+    </center>
+</form>
+
+<script src="~/jquery/jquery.min.js"></script>
+<script src="~/jquery-validate/jquery.validate.min.js"></script>
+<script src="~/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
